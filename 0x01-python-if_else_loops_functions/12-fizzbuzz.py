@@ -14,4 +14,3 @@ def fizzbuzz():
         else:
             print("{}{}".format(i, str), end='')
     print("")
-fizzbuzz()
