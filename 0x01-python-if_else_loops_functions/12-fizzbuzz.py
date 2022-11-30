@@ -5,7 +5,7 @@ def fizzbuzz():
             str = " "
         else:
             str = ""
-        if ((i % 15) == 0 ):
+        if ((i % 15) == 0):
             print("FizzBuzz{}".format(str), end='')
         elif ((i % 3) == 0):
             print("Fizz{}".format(str), end='')
@@ -13,4 +13,3 @@ def fizzbuzz():
             print("Buzz{}".format(str), end='')
         else:
             print("{}{}".format(i, str), end='')
-    print("")
