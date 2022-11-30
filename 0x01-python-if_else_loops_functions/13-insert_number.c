@@ -1,16 +1,17 @@
 #include "lists.h"
 /**
- * @brief 
- * 
- * @param head 
- * @param number 
- * @return listint_t* 
+ * insert_node - insert node in a shoerted linked list
+ *
+ * @head: pointer to the list
+ * @number: num to insert
+ *
+ * Return: pointer to the new list
  */
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *new, *temp, *current;
 	int end = 0;
-	
+
 	current = *head;
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
@@ -41,6 +42,5 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	temp->next = new;
 	new->next = current;
-	
 	return (*head);
 }
