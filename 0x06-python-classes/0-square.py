@@ -1,12 +1,13 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 """
-This module contain classes definition
-@author: Armfath
+Created on Tue May 19 14:21:54 2020
+@author: Robinson Montes
 """
+
 
 class Square:
-    """This is an Empty class that defines a square
-
+    """Empty class Square that defines a square
     Attributes:
         empty
     """
