@@ -30,6 +30,9 @@ class Rectangle:
             rectangle += '\n'
         return (rectangle[:-1])
 
+    def __repr__(self):
+        return (f"Rectangle({self.__width}, {self.__height})")
+
     @property
     def width(self):
         return (self.__width)
