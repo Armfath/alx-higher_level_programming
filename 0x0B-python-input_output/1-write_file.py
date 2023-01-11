@@ -4,7 +4,7 @@ This module contain file oparations
 """
 
 
-def read_file(filename="", text=""):
+def write_file(filename="", text=""):
     """
     Function that write to a file and returns number of charater written
     """
