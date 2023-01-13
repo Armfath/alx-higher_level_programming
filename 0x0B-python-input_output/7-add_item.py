@@ -16,4 +16,8 @@ try:
 except Exception as e:
     filename = "add_item.json"
     list = []
+    if len(sys.argv) > 1:
+        for arg in sys.argv[1:]:
+            list.append(arg)
+    save_to_json_file(list, filename)
     save_to_json_file(list, filename)
