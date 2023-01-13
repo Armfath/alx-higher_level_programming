@@ -7,7 +7,7 @@ import json
 
 def load_from_json_file(filename):
     """
-    Rturns an object (Python data structure) represented by a JSON string
+    function that creates an Object from a “JSON file”
     """
     with open(filename, mode='r') as file:
         object = json.load(file)
