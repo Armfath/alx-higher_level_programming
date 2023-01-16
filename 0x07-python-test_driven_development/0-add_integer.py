@@ -11,7 +11,7 @@ def add_integer(a, b=98):
     adds two integers
     """
     if type(a) is not int:
-        type(a) is float and a == a and abs(a) <= 1.7976931348623158e+308:
+        if type(a) is float and a == a and abs(a) <= 1.7976931348623158e+308:
             a = int(a)
             a = int(a)
         else:
