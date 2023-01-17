@@ -2,7 +2,7 @@
 """
 Containing mathematicams opparations
 
-raiose exception error for type
+raise exception error for type
 """
 
 
