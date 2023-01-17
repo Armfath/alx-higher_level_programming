@@ -10,8 +10,7 @@ def safe_function(fct, *args):
     Execute a funct safetly
     """
     try:
-        result = fct(args[0], args[1])
-        return result
+        return fct(args[0], args[1])
     except Exception as e:
         print("Exception:", e, file=sys.stderr)
         return None
