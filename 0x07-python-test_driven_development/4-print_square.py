@@ -7,6 +7,9 @@ Test actions
 
 
 def print_square(size):
+    """"
+    Draw a square and handle errors
+    """
     if not (isinstance(size, int)):
         raise TypeError("size must be an integer")
     if size < 0:
@@ -14,4 +17,4 @@ def print_square(size):
     for i in range(size):
         for i in range(size):
             print("#", end='')
-        print()    
+        print()
