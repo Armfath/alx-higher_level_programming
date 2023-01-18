@@ -10,21 +10,16 @@ def text_indentation(text):
     """
     Customs text indentation after ., : and ?
     """
-    l = 0
+    size = 0
     if not (isinstance(text, str)):
         raise TypeError("text must be a string")
-    while (l < len(text)):
-        if not (text[l] == '.' or text[l] == ':' or text[l] == '?'):
-            print(text[l], end='')
-            l += 1
+    while (size < len(text)):
+        if not (text[size] == '.' or text[size] == ':' or text[size] == '?'):
+            print(text[size], end='')
+            size += 1
         else:
-            print(text[l], end='')
+            print(text[size], end='')
             print('\n')
-            l += 1
-            while (text[l] == ' '):
-                l += 1
-            
-        
-        
-        
-    
+            size += 1
+            while (text[size] == ' '):
+                size += 1
