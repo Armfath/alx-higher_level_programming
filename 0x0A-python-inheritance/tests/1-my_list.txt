@@ -1,0 +1,25 @@
+Imprt module
+>>> MyList = __import__('1-my_list').MyList
+
+Use this for tests:
+>>> my_list = MyList()
+>>> my_list.append(5)
+>>> my_list.append(-5)
+>>> my_list.sort()
+>>> my_list
+[-5, 5]
+
+>>> MyList([-1, -4, -2, -3, -5]).print_sorted()
+[-5, -4, -3, -2, -1]
+
+>>> MyList([1, 4, 2, 3, 5]).print_sorted()
+[1, 2, 3, 4, 5]
+
+>>> MyList([1, 4, -2, 3, 5]).print_sorted()
+[-2, 1, 3, 4, 5]
+
+>>> MyList([5]).print_sorted()
+[5]
+
+>>> MyList([]).print_sorted()
+[]
