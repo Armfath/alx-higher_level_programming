@@ -1,5 +1,7 @@
 #!usr/bin/python3
 """
+New module to learn inheritance
+
 Inherited class and perfom tests
 """
 
