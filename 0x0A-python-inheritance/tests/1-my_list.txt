@@ -23,3 +23,6 @@ Use this for tests:
 
 >>> MyList([]).print_sorted()
 []
+
+>>> isinstance(y, list)
+True
