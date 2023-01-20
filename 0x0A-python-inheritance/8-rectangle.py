@@ -7,12 +7,14 @@ Class rectangle
 
 class Rectangle(BaseGeometry):
     """
-    Rectangle implamatation
+    Rectangle implamatation using the parent method for validation
     """
+
     def __init__(self, width, height):
         """
         Initiation and validdation
         """
+
         self.__width = width
         self.__height = height
         self.integer_validator("width", self.__width)
