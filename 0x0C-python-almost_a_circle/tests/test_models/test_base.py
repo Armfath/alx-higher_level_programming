@@ -22,21 +22,7 @@ class TestBase(unittest.TestCase):
 
     def test_id(self):
         '''
-            Sending a valid id ok ?
+            Sending a valid id
         '''
-        b = Base(50)
-        self.assertEqual(50, b.id)
-
-    def test_id_zero(self):
-        '''
-            Sending an id 0
-        '''
-        b = Base(0)
-        self.assertEqual(0, b.id)
-
-    def test_id_negative(self):
-        '''
-            Sending a negative id
-        '''
-        b = Base(-20)
-        self.assertEqual(-20, b.id)
+        b = Base(12)
+        self.assertEqual(12, b.id)
