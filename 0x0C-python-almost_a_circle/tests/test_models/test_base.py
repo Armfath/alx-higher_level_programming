@@ -22,7 +22,7 @@ class TestBase(unittest.TestCase):
 
     def test_id(self):
         '''
-            Sending a valid id
+            Sending a valid id ok ?
         '''
         b = Base(50)
         self.assertEqual(50, b.id)
