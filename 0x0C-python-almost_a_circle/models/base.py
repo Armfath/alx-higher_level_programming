@@ -5,18 +5,19 @@ Base Module
 
 
 class Base():
-	""""
-	Class Base
-	"""
+    """"
+    Class Base
+    """
 
-	__nb_objects = 0
-	def __init__(self, id=None):
-		"""
-		Initialisation
-		"""
+    __nb_objects = 0
 
-		if id is None:
-			Base.__nb_objects += 1
-			self.id = Base.__nb_objects
-		else:
-			self.id = id
+    def __init__(self, id=None):
+        """
+        Initialisation
+        """
+
+        if id is None:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+        else:
+            self.id = id
