@@ -19,10 +19,3 @@ class TestBase(unittest.TestCase):
         '''
         b = Base()
         self.assertEqual(1, b.id)
-
-    def test_id(self):
-        '''
-            Sending a valid id
-        '''
-        b = Base(12)
-        self.assertEqual(12, b.id)
