@@ -20,7 +20,11 @@ class TestBase(unittest.TestCase):
         '''
         b = Base()
         self.assertEqual(b.id, 1)
+        
+    def test_is_id(self):
+        """
+        id sent
+        """
         b = Base(5)
         self.assertEqual(b.id, 5)
-
         
