@@ -14,9 +14,17 @@ class TestBase(unittest.TestCase):
     """
 
 
-    def test_id(self):
+    def test_no_id(self):
         '''
-            Sending a valid id
+            Sending no id
         '''
-        b = Base(12)
-        self.assertEqual(12, b.id)
+        b = Base()
+        self.assertEqual(b.id, 1)
+
+    def test_is_id(self):
+        """
+        id sent
+        """
+        b = Base(5)
+        self.assertEqual(b.id, 5)
+        
