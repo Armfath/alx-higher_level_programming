@@ -1,1 +1,1 @@
-Let's review everything about Python
+Let's review everything about Python okay ?
