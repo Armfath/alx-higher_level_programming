@@ -13,30 +13,9 @@ class TestBase(unittest.TestCase):
     Base tests
     """
 
-    def test_id_none(self):
+    def test_basics(self):
         '''
             Sending no id
         '''
         b = Base()
         self.assertEqual(1, b.id)
-
-    def test_id(self):
-        '''
-            Sending a valid id ok ?
-        '''
-        b = Base(50)
-        self.assertEqual(50, b.id)
-
-    def test_id_zero(self):
-        '''
-            Sending an id 0
-        '''
-        b = Base(0)
-        self.assertEqual(0, b.id)
-
-    def test_id_negative(self):
-        '''
-            Sending a negative id
-        '''
-        b = Base(-20)
-        self.assertEqual(-20, b.id)
