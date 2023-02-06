@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Tests for base class
+Tests for Base class
 """
 
 
@@ -13,9 +13,10 @@ class TestBase(unittest.TestCase):
     Base tests
     """
 
-    def test_basics(self):
+
+    def test_id(self):
         '''
-            Sending no id
+            Sending a valid id
         '''
-        b = Base()
-        self.assertEqual(1, b.id)
+        b = Base(12)
+        self.assertEqual(12, b.id)
