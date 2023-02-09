@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Module containing Rectangle
 """
@@ -69,6 +69,6 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """
-        width setter
+        y setter
         """
         self.__y = value
