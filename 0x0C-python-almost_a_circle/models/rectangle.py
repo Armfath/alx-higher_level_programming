@@ -131,7 +131,12 @@ class Rectangle(Base):
         """
         Display rectangle
         """
+        for i in range(self.__y):
+            print("")
         for i in range(self.__height):
             for j in range(self.__width):
+                for k in range(self.__x):
+                    if j == 0:
+                        print(" ", end='')
                 print("#", end='')
             print("")
