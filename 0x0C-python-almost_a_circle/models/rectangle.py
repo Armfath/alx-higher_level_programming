@@ -112,3 +112,9 @@ class Rectangle(Base):
         self._validate_integer_input(value, "y")
         self._validate_non_negative_integer_input(value, "y")
         self.__y = value
+
+    def area(self):
+        """
+        Return area of rectangle
+        """
+        return self.__width * self.__height
