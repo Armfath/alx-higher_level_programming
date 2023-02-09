@@ -53,7 +53,9 @@ class Rectangle(Base):
         """
         Overriding __str__
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        str_1 = "{}/{} - ".format(self.__x, self.__y)
+        str_2 = "{}/{}".format(self.__width, self.__height)
+        return "[Rectangle] ({}) ".format(self.id) + str_1 + str_2
 
     @property
     def width(self):
