@@ -49,6 +49,12 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError(f"{attr_name} must be >= 0")
 
+    def __str__(self):
+        """
+        Overriding __str__
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+
     @property
     def width(self):
         """
