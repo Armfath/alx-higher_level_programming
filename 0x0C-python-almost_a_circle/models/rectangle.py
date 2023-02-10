@@ -140,3 +140,49 @@ class Rectangle(Base):
                         print(" ", end='')
                 print("#", end='')
             print("")
+
+    def _update_w(self, id, width):
+        """update id, w"""
+        self.id = id
+        self._validate_integer_input(width, "width")
+        self._validate_positive_integer_input(width, "width")
+        self.__width = width
+
+    def _update_w_h(self, id, width, height):
+        """update id, w, h"""
+        self._update_w(id, width)
+        self._validate_integer_input(height, "height")
+        self._validate_positive_integer_input(height, "height")
+        self.__height = height
+
+    def _update_w_h_x(self, id, width, height, x):
+        """update id, w, h, x"""
+        self._update_w_h(id, width, height)
+        self._validate_integer_input(x, "x")
+        self._validate_non_negative_integer_input(x, "x")
+        self.__x = x
+
+    def _update_w_h_x_y(self, id, width, height, x, y):
+        """update id, w, h, x, y"""
+        self._update_w_h_x(id, width, height, x)
+        self._validate_integer_input(y, "y")
+        self._validate_non_negative_integer_input(y, "y")
+        self.__y = y
+
+    def update(self, *args):
+        """
+        Update rectangle attrs
+        """
+        num = len(args)
+        if len == 0:
+            return
+        if num == 1:
+            self.id = args[0]
+        elif num == 2:
+            self._update_w(args[0], args[1])
+        elif num == 3:
+            self._update_w_h(args[0], args[1], args[2])
+        elif num == 4:
+            self._update_w_h_x(args[0], args[1], args[2], args[3])
+        elif num == 5:
+            self._update_w_h_x_y(args[0], args[1], args[2], args[3], args[4])
