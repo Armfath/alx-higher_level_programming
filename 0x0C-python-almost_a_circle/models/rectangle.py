@@ -15,39 +15,41 @@ class Rectangle(Base):
         Validate and Initiate
         """
         super().__init__(id)
-        self._validate_integer_input(width, "width")
-        self._validate_positive_integer_input(width, "width")
-        self.__width = width
-        self._validate_integer_input(height, "height")
-        self._validate_positive_integer_input(height, "height")
-        self.__height = height
-        self._validate_integer_input(x, "x")
-        self._validate_non_negative_integer_input(x, "x")
-        self.__x = x
-        self._validate_integer_input(y, "y")
-        self._validate_non_negative_integer_input(y, "y")
-        self.__y = y
+        self._update_w(width, "width")
+        self._update_h(height, "height")
+        self._update_x(x, "x")
+        self._update_y(y, "y")
 
-    def _validate_integer_input(self, value, attr_name):
+    def _validate_integer(self, value, attr_name):
         """
         Is integer
         """
         if type(value) != int:
             raise TypeError(f"{attr_name} must be an integer")
 
-    def _validate_positive_integer_input(self, value, attr_name):
+    def _validate_positive(self, value, attr_name):
         """
         Is positive (> 0)
         """
         if value <= 0:
             raise ValueError(f"{attr_name} must be > 0")
 
-    def _validate_non_negative_integer_input(self, value, attr_name):
+    def _validate_non_negative(self, value, attr_name):
         """
         Is no-negative (>= 0)
         """
         if value < 0:
             raise ValueError(f"{attr_name} must be >= 0")
+
+    def _validate_integer_non_negative(self, value, attr_name):
+        """Is no negative integer"""
+        self._validate_integer(value, attr_name)
+        self._validate_non_negative(value, attr_name)
+
+    def _validate_integer_positive(self, value, attr_name):
+        """Is positive integer"""
+        self._validate_integer(value, attr_name)
+        self._validate_positive(value, attr_name)
 
     def __str__(self):
         """
@@ -69,9 +71,7 @@ class Rectangle(Base):
         """
         width setter
         """
-        self._validate_integer_input(value, "width")
-        self._validate_positive_integer_input(value, "width")
-        self.__width = value
+        self._update_w(value, "width")
 
     @property
     def height(self):
@@ -85,9 +85,7 @@ class Rectangle(Base):
         """
         height setter
         """
-        self._validate_integer_input(value, "height")
-        self._validate_positive_integer_input(value, "height")
-        self.__height = value
+        self._update_h(value, "height")
 
     @property
     def x(self):
@@ -101,9 +99,7 @@ class Rectangle(Base):
         """
         x setter
         """
-        self._validate_integer_input(value, "x")
-        self._validate_non_negative_integer_input(value, "x")
-        self.__x = value
+        self._update_x(value, "x")
 
     @property
     def y(self):
@@ -117,9 +113,7 @@ class Rectangle(Base):
         """
         y setter
         """
-        self._validate_integer_input(value, "y")
-        self._validate_non_negative_integer_input(value, "y")
-        self.__y = value
+        self._update_y(value, "y")
 
     def area(self):
         """
@@ -141,48 +135,62 @@ class Rectangle(Base):
                 print("#", end='')
             print("")
 
-    def _update_w(self, id, width):
-        """update id, w"""
-        self.id = id
-        self._validate_integer_input(width, "width")
-        self._validate_positive_integer_input(width, "width")
-        self.__width = width
+    def _update_w(self, value, attr_name):
+        """update w"""
+        self._validate_integer_positive(value, attr_name)
+        self.__width = value
 
-    def _update_w_h(self, id, width, height):
-        """update id, w, h"""
-        self._update_w(id, width)
-        self._validate_integer_input(height, "height")
-        self._validate_positive_integer_input(height, "height")
-        self.__height = height
+    def _update_h(self, value, attr_name):
+        """update h"""
+        self._validate_integer_positive(value, attr_name)
+        self.__height = value
 
-    def _update_w_h_x(self, id, width, height, x):
-        """update id, w, h, x"""
-        self._update_w_h(id, width, height)
-        self._validate_integer_input(x, "x")
-        self._validate_non_negative_integer_input(x, "x")
-        self.__x = x
+    def _update_x(self, value, attr_name):
+        """update x"""
+        self._validate_integer_non_negative(value, attr_name)
+        self.__x = value
 
-    def _update_w_h_x_y(self, id, width, height, x, y):
-        """update id, w, h, x, y"""
-        self._update_w_h_x(id, width, height, x)
-        self._validate_integer_input(y, "y")
-        self._validate_non_negative_integer_input(y, "y")
-        self.__y = y
+    def _update_y(self, value, attr_name):
+        """update y"""
+        self._validate_integer_non_negative(value, attr_name)
+        self.__y = value
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Update rectangle attrs
         """
-        num = len(args)
-        if len == 0:
-            return
-        if num == 1:
-            self.id = args[0]
-        elif num == 2:
-            self._update_w(args[0], args[1])
-        elif num == 3:
-            self._update_w_h(args[0], args[1], args[2])
-        elif num == 4:
-            self._update_w_h_x(args[0], args[1], args[2], args[3])
-        elif num == 5:
-            self._update_w_h_x_y(args[0], args[1], args[2], args[3], args[4])
+        exist = 0
+        if args:
+            num = len(args)
+            if num == 1:
+                self.id = args[0]
+            elif num == 2:
+                self.id = args[0]
+                self._update_w(args[1], "width")
+            elif num == 3:
+                self.id = args[0]
+                self._update_w(args[1], "width")
+                self._update_h(args[2], "height")
+            elif num == 4:
+                self.id = args[0]
+                self._update_w(args[1], "width")
+                self._update_h(args[2], "height")
+                self._update_x(args[3], "x")
+            elif num == 5:
+                self.id = args[0]
+                self._update_w(args[1], "width")
+                self._update_h(args[2], "height")
+                self._update_x(args[3], "x")
+                self._update_y(args[4], "y")
+        elif kwargs:
+            keys = ["id", "width", "height", "x", "y"]
+            if keys[0] in kwargs:
+                self.id = kwargs[keys[0]]
+            if keys[1] in kwargs:
+                self._update_w(kwargs[keys[1]], keys[1])
+            if keys[2] in kwargs:
+                self._update_h(kwargs[keys[2]], keys[2])
+            if keys[3] in kwargs:
+                self._update_x(kwargs[keys[3]], keys[3])
+            if keys[4] in kwargs:
+                self._update_y(kwargs[keys[4]], keys[4])
