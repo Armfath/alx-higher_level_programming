@@ -1,8 +1,8 @@
 #!/usr/bin/node
 const process = require('process');
 
-let var1;
-let var2;
+let var1 = 'undefined';
+let var2 = 'undefined';
 if (process.argv[2]) {
   var1 = process.argv[2];
 }
