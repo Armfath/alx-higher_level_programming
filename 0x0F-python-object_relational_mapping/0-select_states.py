@@ -5,8 +5,8 @@ This module to use MySQLdb
 import sys
 import MySQLdb
 
-args = sys.argv[1:]
 
+args = sys.argv[1:]
 conn = MySQLdb.connect(user=args[0], passwd=args[1], db=args[2])
 cur = conn.cursor()
 cur.execute("SELECT * FROM states ORDER BY id ASC ")
