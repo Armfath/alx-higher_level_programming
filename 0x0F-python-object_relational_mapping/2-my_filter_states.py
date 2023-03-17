@@ -9,7 +9,7 @@ args = sys.argv[1:]
 
 conn = MySQLdb.connect(user=args[0], passwd=args[1], db=args[2], charset="utf8")
 cur = conn.cursor()
-cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC ")
+cur.execute("SELECT * FROM states WHERE name = '%s' ORDER BY id ASC" % (args[3]))
 states = cur.fetchall()
 for state in states:
     print(state)
