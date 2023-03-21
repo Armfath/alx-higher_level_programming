@@ -23,6 +23,6 @@ if __name__ == "__main__":
     # Query States
     first_state = session.query(State).first()
     # Print datas
-    print('Nothing\n') if None else print('{}: {}'
+    print('Nothing') if first_state is None else print('{}: {}'
                                         .format(first_state.id,
                                                 first_state.name))
