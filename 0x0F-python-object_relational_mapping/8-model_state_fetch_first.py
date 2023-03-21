@@ -21,8 +21,9 @@ if __name__ == "__main__":
     # Open a session
     session = Session()
     # Query States
-    first_state = session.query(State).first()
+    f_state = session.query(State).first()
     # Print datas
-    print('Nothing') if first_state is None else print('{}: {}'
-                                                       .format(first_state.id,
-                                                       first_state.name))
+    if f_state is None:
+        print('Nothing')
+    else:
+        print('{}: {}'.format(f_state.id, f_state.name))
