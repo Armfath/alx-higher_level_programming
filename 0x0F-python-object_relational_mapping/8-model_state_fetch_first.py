@@ -24,5 +24,5 @@ if __name__ == "__main__":
     first_state = session.query(State).first()
     # Print datas
     print('Nothing') if first_state is None else print('{}: {}'
-                                        .format(first_state.id,
-                                                first_state.name))
+                                                       .format(first_state.id,
+                                                       first_state.name))
