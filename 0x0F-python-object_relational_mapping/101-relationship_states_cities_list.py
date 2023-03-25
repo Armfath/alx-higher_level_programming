@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """State using orm and tables relatio
 """
+
+
 from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy.orm import sessionmaker

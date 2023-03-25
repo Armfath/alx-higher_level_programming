@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-Created on Sat Aug  8 09:05:11 2020
-
-@author: Robinson Montes
+Start link class to table in database
 """
 from relationship_state import Base, State
 from relationship_city import City
