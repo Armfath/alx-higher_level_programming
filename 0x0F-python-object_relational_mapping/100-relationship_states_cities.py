@@ -22,9 +22,9 @@ if __name__ == "__main__":
     # Open a session
     session = Session()
     # Create new state
-    new_city_in_calif = City(name='San Francisco',
-                             state=State(name='California'))
+    session = Session()
+    california = State(name="California")
     # Add new_state to the engine
-    session.add(new_city_in_calif)
+    session.add(california)
     # Commit the add
     session.commit()
