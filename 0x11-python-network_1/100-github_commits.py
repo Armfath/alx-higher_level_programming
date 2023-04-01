@@ -13,9 +13,7 @@ if __name__ == "__main__":
     r = requests.get(url)
     if r.status_code == requests.codes.ok:
         commits = r.json()
-        last_10 = commits[-10:]
-        r_commits = reversed(last_10)
-        for i in r_commits:
+        r_last_10 = reversed(commits[-10:])
+        for i in r_last_10:
             print(f"{i['sha']}: {i['commit']['author']['name']}")
-    else:
-        print('None')
+
