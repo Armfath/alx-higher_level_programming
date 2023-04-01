@@ -11,11 +11,11 @@ if __name__ == "__main__":
     value = sys.argv[1] if len(sys.argv) >= 2 else ""
     param = {'q': value}
     r = requests.post(url, data=param)
-    try:
-        if not r.json():
+    if 'application/json' in r.headers.get('content-type'):
+        json_r = r.json()
+        if not json_r:
             print('No result')
         else:
-            json_r = r.json()
             print(f"[{json_r['id']}] {json_r['name']}")
-    except requests.exceptions.JSONDecodeError:
+    else:
         print('Not a valid JSON')
