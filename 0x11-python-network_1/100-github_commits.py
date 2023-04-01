@@ -16,4 +16,3 @@ if __name__ == "__main__":
         r_last_10 = reversed(commits[-10:])
         for i in r_last_10:
             print(f"{i['sha']}: {i['commit']['author']['name']}")
-
